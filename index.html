@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Numbers - Hubtel </title>
+    <script src="https://kit.fontawesome.com/dcd356c426.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="w3-center w3-padding-16">
+        <img class="hubtel-logo" src="logo.png" alt="">
+    </div>
+    
+
+    <div class="container w3-card">
+        <span class="w3-small w3-text-grey">
+            Add Numbers
+        </span>
+
+        <span class="w3-xlarge w3-text-green">
+            <span id="solution">0</span>
+            <i onclick="window.location.reload();" style="cursor: pointer;"
+                title="Redo"
+                class="fas fa-redo w3-text-grey w3-hover-text-green w3-small"></i>
+        </span>
+
+        <div class="w3-row">
+            <div class="w3-col l5 m5 s5">
+                <input class="w3-input" id="num1" type="number" placeholder="0">
+            </div>
+            <div class="w3-col l2 m2 s2 w3-center addsign">
+                <span> <i class="fas fa-plus w3-small w3-text-grey"></i> </span>
+            </div>
+            <div class="w3-col l5 m5 s5">
+                <input class="w3-input" id="num2" type="number" placeholder="0">
+            </div>
+        </div>
+
+        <button class="w3-button w3-green w3-round-large w3-block" onclick="getNums()">Calculate</button>
+
+    </div>
+
+    <script>
+
+        function getNums() {
+
+            const num1 = document.getElementById("num1").value;
+            const num2 = document.getElementById("num2").value;
+
+            const solution = calc(num1, num2);
+
+            return document.getElementById("solution").innerHTML = solution;
+
+        }
+
+        function calc(n1, n2) {
+            return Number(n1) + Number(n2);
+        }
+
+    </script>
+
+</body>
+
+</html>
